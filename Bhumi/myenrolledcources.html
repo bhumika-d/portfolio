@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "poppins", sans-serif;
+        }
+        
+        body {
+            height: 100vh;
+            background-image: url(back.jpeg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .enrolled-courses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            max-width: 600px; 
+            padding: 20px;
+            position: relative; 
+        }
+
+        .course-image {
+            width: 250px; 
+            max-width: 100%; 
+            height: 150px; 
+            border-radius: 8px; 
+        }
+
+        .enrolled-courses h2 {
+            position: absolute;
+            top: -40px; /* Adjust the top position to move it above the images */
+            left: 50%; 
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 1.5em;
+            margin: 0;
+            margin-bottom: 20px; 
+            z-index: 1; /* Ensure the heading is above the images */
+        }
+
+        .container {
+            position: relative;
+            width: 100%; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+            overflow: hidden; /* Hide overflowing content */
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Preserve existing styling */
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #14793b;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            transform: scale(0);
+            transition: .3s ease;
+        }
+
+        .container:hover .overlay {
+            transform: scale(1);
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="enrolled-courses">
+        <h2>My Enrolled courses</h2> 
+        <div class="container">
+            <img class="course-image" src="oop.jpg" alt="OOP">
+            <div class="overlay">
+                <div class="text">Syed MD. Minhaz Hossain</div>
+            </div>
+        </div>
+        <div class="container">
+            <img class="course-image" src="oopl.jpg" alt="OOPL">
+            <div class="overlay">
+                <div class="text">Dhrubajyoti Das</div>
+            </div>
+        </div>
+        <div class="container">
+            <img class="course-image" src="ip.jpg" alt="IP">
+            <div class="overlay">
+                <div class="text">MD Tamim Hossain</div>
+            </div>
+        </div>
+        <div class="container">
+            <img class="course-image" src="nm.jpg" alt="NM">
+            <div class="overlay">
+                <div class="text">Nafisa Anjum</div>
+            </div>
+        </div>
+        <div class="container">
+            <img class="course-image" src="cgva.jpg" alt="CGVA">
+            <div class="overlay">
+                <div class="text">Kollol Dey</div>
+            </div>
+        </div>
+        <div class="container">
+            <img class="course-image" src="dept.jpg" alt="DEPT">
+            <div class="overlay">
+                <div class="text">Sampad Ghosh</div>
+            </div>
+        </div>
+        <div class="container">
+            <img class="course-image" src="deptl.jpg" alt="DEPTL">
+            <div class="overlay">
+                <div class="text">Abir Dhar</div>
+            </div>
+        </div>
+        <div class="container">
+            <img class="course-image" src="ceng.jpg" alt="CENG">
+            <div class="overlay">
+                <div class="text">Shreyashi Paul</div>
+            </div>
+        </div>
+        <div class="container">
+            <img class="course-image" src="bs.jpg" alt="BS">
+            <div class="overlay">
+                <div class="text">Muntasir</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

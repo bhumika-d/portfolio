@@ -1,0 +1,889 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin-top: 5px;
+}
+
+body {
+    height: 100vh;
+    background-image: url(back.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+}
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #26b9ea;
+}
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn{
+    display: none;
+  }
+
+}
+.toggle_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height:5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+  font-weight: 1000px;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.container_1 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 10px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.dropdown_menu {
+  position:absolute;
+  right: 2rem;
+  top:60px;
+  
+  height: auto;
+  background: rgba(27, 147, 228, 1.2);
+  backdrop-filter: blur(40px);
+  border-radius: 10px;
+  border-color: rgb(54, 162, 235);
+  overflow: hidden;
+  display: none;
+  z-index: 1000; 
+}
+.dropdown_menu.show {
+  display: block; 
+}
+
+.dropdown_menu li{
+  
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+}
+.dropdown_menu a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 45px;
+  transition: color 0.3s ease;
+}
+.dropdown_menu li:hover {
+  background-color: #26b9ea;
+    color: #fff;
+    border-radius: 20px;
+    
+
+}
+.header {
+    position: relative;
+    padding: 0 2rem;
+    margin-top: 10px;
+}
+
+.header img {
+    margin: 20px;
+}
+
+.navbar {
+    margin-top: 10px;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar  .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.action_btn {
+    background-color: #26b9ea;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.action_btn:hover {
+    scale: 1.05rem;
+    color: #fff;
+    background-color: #1097c4;
+
+}
+.semester-box {
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  width: 400px;
+  height: auto;
+  margin: 0 auto; /* Center the box horizontally */
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subject {
+  margin-bottom: 10px;
+}
+
+.subject label {
+  margin-right: 10px;
+}
+
+input[type="number"] {
+  width: 100px;
+  padding: 5px;
+  color: black;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #fff;
+  background-color: deepskyblue;
+}
+
+.credits-info {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.result-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  display: none;
+}
+.container_3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+}
+.notice-box {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.notice-box h2{
+  text-align: center;
+}
+
+.notice {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.notice p {
+  margin: 0;
+}
+
+.notice.warning {
+  border-color: #f0ad4e;
+  background-color: #fcf8e3;
+}
+
+.notice.error {
+  border-color: #d9534f;
+  background-color: #f2dede;
+}
+
+.notice.success {
+  border-color: #5cb85c;
+  background-color: #dff0d8;
+}
+.notice.info {
+  border-color: #5bc0de;
+  background-color: #d9edf7;
+}
+.chart {
+  padding: 2rem;
+  border: 2px solid darkgreen;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
+}
+h1 {
+    color: #fff;
+    font-size: 30px;
+}
+
+.container {
+    padding: 5px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: small;
+}
+
+.container img {
+    display: block;
+    margin: auto;
+    max-width: calc(100% - 40px);
+}
+h2,h3 {
+    color: #fff;
+    line-gap-override: 2px;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space between */
+    align-items: flex-start;
+    height: calc(100vh - 100px);
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.content-box {
+    background-color: #fff;
+    padding: 10px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: auto;
+    margin-left: 20px;
+    height: 70%;
+    align-items: center;
+}
+
+.container img {
+    display: block;
+    margin: auto;
+    max-width: 150px; /* Increased maximum width */
+    max-height: 200px; /* Increased maximum height */
+    margin-top: 10px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px; /* Added margin */
+    color: #333; /* Added text color */
+}
+
+.text > *:last-child {
+    margin-bottom: 0; /* To remove extra margin for the last element */
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+
+footer {
+    background-color: rgb(2, 7, 77);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.calendar {
+    height: 25rem;
+    width: 25rem;
+    background-color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-left: 20px;
+}
+  
+  .calendar {
+    padding: 20px; /* Adjusted padding */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; /* Box shadow */
+  }
+  
+  .calendar-header {
+    background: #26b9ea;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 7px;
+    align-items: center;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  .calendar-body {
+    padding: 10px;
+  }
+  
+  .calendar-week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(104, 104, 104);
+  }
+  
+  .calendar-week-days div:hover {
+    color: black;
+    transform: scale(1.2);
+    transition: all .2s ease-in-out;
+  }
+  
+  .calendar-week-days div {
+    display: grid;
+    place-items: center;
+    color: steelblue;
+    height: 40px;
+  }
+  
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: #0A0921;
+  }
+  
+  .calendar-days div {
+    width: 30px; /* Reduced width */
+    height: 30px; /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+  }
+  
+  .month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .year-picker {
+    display: flex;
+    align-items: center;
+  }
+  
+  .year-change {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0px 10px;
+    cursor: pointer;
+  }
+  
+  .year-change:hover {
+    background-color: #4d9cb6;
+    transition: all .2s ease-in-out;
+    transform: scale(1.12);
+  }
+  
+  .calendar-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  #year:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 0.2 ease-in-out;
+  }
+  
+  .calendar-days div span {
+    position: absolute;
+  }
+  
+  .calendar-days div:hover {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    background-color: #1097c4;
+    border-radius: 20%;
+    color:black;
+  }
+  
+  .calendar-days div.current-date {
+    color: #f8fbff;
+    background-color: #4d9cb6;
+    border-radius: 20%;
+  }
+  
+  .month-list {
+    position: relative;
+    left: 0;
+    top: -130px;
+    background-color: #ebebeb;
+    color: #151426;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    border-radius: 20px;
+  }
+  
+  .month-list>div {
+    display: grid;
+    place-content: center;
+    margin: 5px 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .month-list>div>div {
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .month-list>div>div:hover {
+    background-color: #4d9cb6;
+    color: black;
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .month-list.show {
+    visibility: visible;
+    pointer-events: visible;
+    transition: 0.6s ease-in-out;
+    animation: to-left .71s forwards;
+  }
+  
+  .month-list.hideonce {
+    visibility: hidden;
+  }
+  
+  .month-list.hide {
+    animation: to-right 1s forwards;
+    visibility: none;
+    pointer-events: none;
+  }
+  
+  .date-time-formate {
+    height: 4rem;
+    width: 100%;
+    font-family: Dubai Light, Century Gothic;
+    position: relative;
+    display: flex;
+    top: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  /* CSS for the round button */
+  .avatar {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: green;
+    cursor: pointer;
+    z-index: 999; /* Ensure it's above other elements */
+    outline: #012201;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-toggle-btn {
+    position: fixed;
+    bottom: 170px; /* Adjust the vertical position to create a minimum gap */
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+  
+/* Styles for today's date */
+.today {
+  background-color: #106891; /* Yellow color for today's date */
+  color: #fff; /* White text color */
+  border-radius: 50%; /* Round shape */
+  font-weight: bold; /* Bold font */
+}
+
+/* CSS to show the calendar */
+.calendar {
+  position: absolute;
+  top: 110px; /* Adjust as needed */
+  right: 90px; /* Adjust as needed */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  height: 500px; /* Adjust the height as needed */
+  width: 300px; /* Adjust the width as needed */
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* CSS to show the calendar when toggled */
+.calendar.show-calendar {
+  display: block;
+}
+
+  
+  .day-text-formate {
+    font-family: Microsoft JhengHei UI;
+    font-size: 1.4rem;
+    padding-right: 5%;
+    border-right: 3px solid #4d9cb6;
+  }
+  
+  .date-time-value {
+    display: block;
+    position: relative;
+    text-align: center;
+    padding-left: 5%;
+  }
+  
+  .time-formate {
+    font-size: 1.5rem;
+  }
+  
+  .time-formate.hideTime {
+    animation: hidetime 1.5s forwards;
+  }
+  
+  .day-text-formate.hidetime {
+    animation: hidetime 1.5s forwards;
+  }
+  
+  .date-formate.hideTime {
+    animation: hidetime 1.5s forwards;
+  }
+  
+  .day-text-formate.showtime {
+    animation: showtime 1s forwards;
+  }
+  
+  .time-formate.showtime {
+    animation: showtime 1s forwards;
+  }
+  
+  .date-formate.showtime {
+    animation: showtime 1s forwards;
+  }
+  
+  @keyframes to-top {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(100%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes to-left {
+    0% {
+      transform: translatex(230%);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translatex(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes to-right {
+    10% {
+      transform: translatex(0);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translatex(-150%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes showtime {
+    0% {
+      transform: translatex(250%);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translatex(0%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes hidetime {
+    0% {
+      transform: translatex(0%);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translatex(-370%);
+      opacity: 1;
+    }
+  }
+  .course-box {
+    width: calc(25.20% - 20px);
+    height: 90px;
+    background-color: #ffffff;
+    color: darkgreen;
+    border: 2px solid darkblue;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: medium;
+    position: absolutes;
+}
+.enrolled-courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+  max-width: 200px; /* Adjust this value as needed */
+}
+.enrolled-courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    text-align: center;
+}
+.enrolled-courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items at the start */
+    margin-top: 20px; /* Adjust as needed */
+    
+    
+}
+
+.enrolled-courses h2 {
+    color: #fff; /* Set color to white */
+    position: absolutes;
+    display: block;
+width: 100%;
+min-width: 100% !important;s
+}
+
+.todo-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 900;
+}
+
+.todo-input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.todo-container button {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove border */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the button inline */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.todo-container button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+
+.todo-list {
+  list-style-type: disc; /* Use bullet points */
+  padding-left: 20px; /* Adjusted left padding for bullets */
+  background-color: rgb(156, 156, 156);
+}
+
+.todo-item {
+  margin-bottom: 5px;
+  border-color: #5cb85c;
+  background-color: #dff0d8;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.delete-btn {
+  float: right;
+  color: #ff0000;
+  cursor: pointer;
+}
+.chart-container {
+  width: 450px; /* Adjust the width as needed */
+  height: 600px; /* Adjust the height as needed */
+  border: 1px solid #ccc; /* Add border */
+  padding: 10px; /* Add padding */
+  margin: 0 auto; /* Center horizontally */
+  overflow: auto; /* Enable scroll if chart exceeds container */
+}
+
+.chart-content {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space elements evenly */
+  align-items: center; /* Center vertically */
+  margin-bottom: 10px; /* Add some space between heading and chart */
+}
+
+.chart-container h3 {
+  text-align: center; /* Center the heading */
+}
+#closeButton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+#closeButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+
+
+

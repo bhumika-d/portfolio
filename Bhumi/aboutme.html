@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Total Credits Completed</title>
+<style>
+.semester-box {
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    width: 400px;
+    height: auto;
+    margin: 0 auto; /* Center the box horizontally */
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subject {
+    margin-bottom: 10px;
+}
+
+.subject label {
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 5px;
+    color: black;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #fff;
+    background-color: deepskyblue;
+}
+
+.credits-info {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.result-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    display: none;
+    width: 300px; /* Adjust width as needed */
+    max-width: 80%; /* Limit maximum width */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin-top: 5px;
+}
+
+body {
+    height: 100vh;
+    background-image: url(back.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+.submit-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.submit-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+</style>
+</head>
+<body>
+    <div class="semester-box">
+        <h2>My Credits</h2>
+        <div class="subject">
+            <label for="totalCredits">Completed Credits:</label>
+            <input type="number" id="totalCredits" class="credits" placeholder="Enter completed credits">
+        </div>
+        <button onclick="updateCredits()" class="submit-button">Submit</button>
+
+    </div>
+    
+    <div class="result-box" id="resultBox">
+        <div class="credits-info" id="creditsInfo"></div>
+    </div>
+    
+    <script>
+    // JavaScript
+    document.getElementById('totalCredits').value = ""; // Set total credits here
+    
+    function updateCredits() {
+        var totalCreditsInput = document.getElementById('totalCredits');
+        var totalCredits = parseFloat(totalCreditsInput.value);
+    
+        var targetCredits = 160; // Total credits set here
+    
+        if (!isNaN(totalCredits)) {
+            var remainingCredits = targetCredits - totalCredits;
+    
+            var creditsInfo = document.getElementById("creditsInfo");
+            creditsInfo.textContent = "Total Credits completed: " + totalCredits.toFixed(2) + " / Remaining Credits need to complete: " + remainingCredits.toFixed(2);
+    
+            showResult();
+        } else {
+            var creditsInfo = document.getElementById("creditsInfo");
+            creditsInfo.textContent = "Please enter valid numbers for total and target credits.";
+        }
+    }
+    
+    function showResult() {
+        var resultBox = document.getElementById("resultBox");
+        resultBox.style.display = "block";
+    }
+    </script>
+</body>
+</html>

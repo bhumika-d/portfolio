@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Photo</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin-top: 5px;
+}
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-image: url(back.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #photo-container {
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #fff;
+        }
+
+        #main-photo {
+            max-width: 200px;
+            height: 250px;
+            border: 2px solid #333;
+        }
+
+        #change-btn, #reset-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #change-btn:hover, #reset-btn:hover {
+            background-color: #45a045;
+        }
+
+        #file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Change Photo</h1>
+        <div id="photo-container">
+            <img id="main-photo" src="my photo.jpeg" alt="my Photo">
+        </div>
+        <input type="file" id="file-input">
+        <button id="change-btn">Change Photo</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const changeBtn = document.getElementById('change-btn');
+            const resetBtn = document.getElementById('reset-btn');
+            const mainPhoto = document.getElementById('main-photo');
+            const fileInput = document.getElementById('file-input');
+            const defaultPhoto = 'default.jpg'; // Default photo path
+
+            // Function to handle file selection
+            fileInput.addEventListener('change', function() {
+                const file = fileInput.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        mainPhoto.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Function to handle change photo button click
+            changeBtn.addEventListener('click', function() {
+                fileInput.click();
+            });
+
+            // Function to handle reset button click
+            resetBtn.addEventListener('click', function() {
+                mainPhoto.src = defaultPhoto;
+            });
+        });
+    </script>
+</body>
+</html>
+

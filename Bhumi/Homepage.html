@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Homepage</title>
+
+    <link rel="stylesheet" href="homepage.css">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+    <script src="homepage.js" defer></script>
+ 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .icon {
+        padding: 5px; /* Adjusted padding */
+        font-size: 12px; /* Adjusted font size */
+        width: 18px;
+        
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        margin-right: 10px; /* Added margin to separate icons */
+      }
+    
+      .icon:hover { /* Added hover effect */
+        opacity: 0.7;
+      }
+    
+      .fa-whatsapp {
+        background: #25D366;
+        color: white;
+        padding: 5px; /* Adjusted padding */
+        font-size: 12px; /* Adjusted font size */
+        width: 18px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+      }
+    
+      .fa-whatsapp:hover { /* Added hover effect */
+        opacity: 0.7;
+      }
+      .email {
+        background: rgb(248, 22, 22);
+        color: white;
+      }
+       
+      .chart-container {
+    width: 400px;
+    height: 350px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 0 auto;
+    overflow: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.chart-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.chart-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.chart-content canvas {
+    width: 60%;
+}
+
+
+  
+    </style>
+</head>
+<body>
+   
+    <header>
+       
+        <div class="navbar">
+            <img src="puc_logo.png" alt="puc logo" width="100px" height="80px">
+            <h1>Premier University</h1>
+            <ul class="links">
+                <li><a href="Homepage.html">HOME</a></li>
+                <li><a href="Editprofile.html">EDIT PROFILE</a></li>
+                <li><a href="EditRegistration.html">EDIT REGISTRATION</a></li>
+                <li><a href="blog.html">STUDENT BLOGS</a></li>
+            </ul>
+            <a href="signout.html" class="action_btn">SIGN OUT</a>
+            <div class="toggle_btn" onclick="toggleMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+          
+        <ul class="dropdown_menu">
+            <li><a href="myenrolledcources.html">My enrolled courses</a></li>
+            <li><a href="aboutme.html">My Credits</a></li>
+            <li><a href="mygrowth.html">My Growth</a></li>
+            <li><a href="enrollment.html">Enrollment</a></li>
+            <li><a href="studentaccounts.html">Student Accounts</a></li>
+            <li><a href="classroutine.html">Class routine</a></li>
+            <li><a href="reports.html">Result</a></li>
+            <li><a href="1068.IP.html">Lab Reports</a></li>
+            <li><a href="Notice.html">Notice Box</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <img src="tofamaam.png" alt="Avatar" class="avatar" onclick="showPopup()">
+
+
+<div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 999;">
+ 
+  <img src="tofamaam.png" alt="advisor mam">
+  <h3>Hello! I am Jannat Tohfa Chowdhury</h3>
+  <p>I am your advisor for your entire journey in this university</p>
+  <p>If you encounter any issues or have any inquiries, please feel free to contact me. I'm here to assist you and address any concerns you may have.</p>
+  <p><i class="icon material-icons email">email</i> jannatttohfa@gmaail.com</p>
+  <p><a href="#" class="fa fa-whatsapp"></a> 01537380596</p>
+  <button id="closeButton" onclick="closePopup()">Close</button>
+
+</div>
+      
+        <button class="calendar-toggle-btn" onclick="toggleCalendar()">
+            <i class='far fa-calendar-alt' style='font-size:36px'></i>
+        </button>
+        
+       
+        <div class="calendar">
+            <div class="calendar-header">
+                <span class="month-picker" id="month-picker"> May </span>
+                <div class="year-picker" id="year-picker">
+                    <span class="year-change" id="pre-year">
+                        <pre><</pre>
+                    </span>
+                    <span id="year">2024 </span>
+                    <span class="year-change" id="next-year">
+                        <pre>></pre>
+                    </span>
+                </div>
+            </div>
+    
+            <div class="calendar-body">
+                <div class="calendar-week-days">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="calendar-days" id="calendar-days">
+                </div>
+            </div>
+            <div class="calendar-footer">
+            </div>
+            <div class="date-time-formate">
+                <div class="day-text-formate">TODAY</div>
+                <div class="date-time-value">
+                    <div class="time-formate">01:41:20</div>
+                    <div class="date-formate">03 - march - 2022</div>
+                </div>
+            </div>
+            <div class="month-list"></div>
+        </div>
+        
+        
+        <div class="content-box">
+            <img src="my photo.jpeg" alt="my photo" width="150px" height="200px">
+            <div class="text">
+                <h2>Bhumika Dey</h2>
+                <h3>ID: 0222310005101068</h3>
+                <h3>Department of <b>Computer Science & Engineering</b></h3>
+                <h3><b>Advisor:</b> Jannat Tohfa Chowdhury </h3>
+            </div>
+        </div>
+
+        
+        <div class="chart-container">
+            <h2>Semesterwise Marks Overview</h2>
+            <div class="chart-content">
+                <canvas id="activityChart" width="250" height="250"></canvas>
+                <div class="chart-options">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="todo-container">
+            <h2>To-Do List</h2>
+            <input type="text" id="todoInput" class="todo-input" placeholder="Enter task...">
+            <button onclick="addTodo()">Add Task</button>
+            <ul id="todoList"></ul>
+        
+        </div>
+    </div>
+      
+ 
+    <footer>
+        <p>&copy; 2024 Premier University. All rights reserved.</p>
+    </footer>
+    
+    
+    <script>
+        
+        const activitiesCompleted = {
+            quizes: 20,
+            assignments: 10,
+            midTerm: 20,
+            attendance: 10,
+            final: 40
+            
+        };
+
+        
+        function renderPieChart(data) {
+            const ctx = document.getElementById('activityChart').getContext('2d');
+            const labels = Object.keys(data);
+            const values = Object.values(data);
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Activities (Marks)',
+                        data: values,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)', // Red
+                            'rgba(54, 162, 235, 0.5)', // Blue
+                            'rgba(255, 206, 86, 0.5)', // Yellow
+                            'rgba(75, 192, 192, 0.5)', // Green
+                            'rgba(153, 102, 255, 0.5)', // Purple
+                            // Add more colors as needed
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutoutPercentage: 50 // Adjust the percentage to control the size of the blank space
+                }
+            });
+        }
+
+     
+        renderPieChart(activitiesCompleted);
+
+      
+        function toggleCalendar() {
+            var calendar = document.querySelector('.calendar');
+            calendar.classList.toggle('show-calendar');
+        }
+
+       
+        function addTodo() {
+            var input = document.getElementById("todoInput").value;
+            var ul = document.getElementById("todoList");
+            var li = document.createElement("li");
+            li.className = "todo-item";
+            li.innerHTML = input + "<span class='delete-btn' onclick='deleteTodo(this)'>Delete</span>";
+            ul.appendChild(li);
+            document.getElementById("todoInput").value = "";
+        }
+
+       
+        function deleteTodo(item) {
+            item.parentNode.remove();
+        }
+        function addTodo() {
+    var input = document.getElementById("todoInput").value.trim(); // Trim whitespace from input
+    if (input === "") {
+        alert("Please write something.");
+        return; // Stop further execution
+    }
+    
+    var ul = document.getElementById("todoList");
+    var li = document.createElement("li");
+    li.className = "todo-item";
+    li.innerHTML = input + "<span class='delete-btn' onclick='deleteTodo(this)'>Delete</span>";
+    ul.appendChild(li);
+    document.getElementById("todoInput").value = "";
+}
+
+        function populateCalendarDates() {
+            const calendarDays = document.getElementById("calendar-days");
+            calendarDays.innerHTML = "";
+
+            // Number of days in the month
+            const daysInMonth = 31; // Update this with actual days in the month
+
+            // Populate the calendar days
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayElement = document.createElement("div");
+                dayElement.textContent = i;
+                calendarDays.appendChild(dayElement);
+            }
+        }
+        // Populate calendar dates
+function populateCalendarDates() {
+    const calendarDays = document.getElementById("calendar-days");
+    calendarDays.innerHTML = "";
+
+    // Get current date
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+
+    // Number of days in the month
+    const daysInMonth = 31; // Update this with actual days in the month
+
+    // Populate the calendar days
+    for (let i = 1; i <= daysInMonth; i++) {
+        const dayElement = document.createElement("div");
+        dayElement.textContent = i;
+        if (i === currentDay) {
+            dayElement.classList.add("today");
+        }
+        calendarDays.appendChild(dayElement);
+    }
+}
+
+
+        // Call function to populate calendar dates
+        populateCalendarDates();
+        // Function to toggle the dropdown menu
+function toggleMenu(element) {
+    var dropdownMenu = element.nextElementSibling;
+    dropdownMenu.classList.toggle('show-menu');
+}
+function toggleMenu(x) {
+    x.classList.toggle("change");
+    var menuLinks = document.querySelector(".dropdown_menu");
+    menuLinks.classList.toggle("show");
+  }
+  const todayShowTime = document.querySelector('.time-formate');
+  const todayShowDate = document.querySelector('.date-formate');
+  
+  const currshowDate = new Date();
+  const showCurrentDateOption = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long',
+  };
+  const currentDateFormate = new Intl.DateTimeFormat(
+    'en-US',
+    showCurrentDateOption
+  ).format(currshowDate);
+  todayShowDate.textContent = currentDateFormate;
+  setInterval(() => {
+    const timer = new Date();
+    const option = {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+    };
+    const formateTimer = new Intl.DateTimeFormat('en-us', option).format(timer);
+    let time = `${`${timer.getHours()}`.padStart(
+        2,
+        '0'
+      )}:${`${timer.getMinutes()}`.padStart(
+        2,
+        '0'
+      )}: ${`${timer.getSeconds()}`.padStart(2, '0')}`;
+    todayShowTime.textContent = formateTimer;
+  }, 1000);
+  function showPopup() {
+  var popup = document.getElementById("popup");
+  popup.style.display = "block";
+}
+
+function closePopup() {
+  var popup = document.getElementById("popup");
+  popup.style.display = "none";
+}
+
+    </script>
+</body>
+</html>

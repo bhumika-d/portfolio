@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color:coral;
+            color: #fff;
+            padding: 20px;
+        }
+        nav {
+            background-color: peachpuff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        img.logo {
+            display: block;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="password"], input[type="email"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>PREMIER UNIVERSITY OF CHITTAGONG</b></h1>
+    <img class="logo" height="150px" width="200px" src="Images/puc_logo.png"  alt="puc  logo">
+    <h2><b>DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</b></h2>
+    <h3><b>LAB REPORT</b></h3>
+    <form style="max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center;">Experiment Submission Form</h2>
+    <div style="margin-bottom: 15px;">
+        <label for="courseCode" style="font-weight: bold;">Course Code:</label>
+        <input type="text" id="courseCode" name="courseCode" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="courseTitle" style="font-weight: bold;">Course Title:</label>
+        <input type="text" id="courseTitle" name="courseTitle" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="experimentName" style="font-weight: bold;">Experiment Name:</label>
+        <input type="text" id="experimentName" name="experimentName" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="experimentNo" style="font-weight: bold;">Experiment No:</label>
+        <input type="number" id="experimentNo" name="experimentNo" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="submittedTo" style="font-weight: bold;">Submitted To:</label>
+        <input type="text" id="submittedTo" name="submittedTo" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+</div>
+<div style="margin-bottom: 15px;">
+<label for="dateOfPerformance" style="font-weight: bold;">Date of Performance:</label>
+<input type="date" id="dateOfPerformance" name="dateOfPerformance" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+</div>
+    <div style="margin-bottom: 15px;">
+        <label for="Dateofsubmission" style="font-weight: bold;">Date of submission:</label>
+        <input type="date" id="Dateofsubmission" name="Dateofsubmission" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    
+    <div style="margin-bottom: 15px;">
+        <label for="name" style="font-weight: bold;">Name:</label>
+        <input type="text" id="name" name="name" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="id" style="font-weight: bold;">ID:</label>
+        <input type="number" id="id" name="id" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="semester" style="font-weight: bold;">Semester:</label>
+        <input type="number" id="semester" name="semester" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="section" style="font-weight: bold;">Section:</label>
+        <input type="text" id="section" name="section" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="batch" style="font-weight: bold;">Batch:</label>
+        <input type="number" id="batch" name="batch" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;" required>
+    </div>
+    <div style="text-align: center;">
+        <input type="submit" value="Submit" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+    </div>
+    
+</form> <br> <br>
+<header>
+    <h3><b>HTML</b></h3>
+</header> <br> <br>
+    <img class="logo" height="150px" width="200px" src="Images/html loggo.jpeg" alt="HTML logo">
+
+    <p style="color: coral; font-weight: bold; font-size: 20px;">Objective</p>
+
+    <p> To standardize web page structure, integrate media elements, ensure accessibility, and enable interactive forms, shaping modern web applications for developers and users.
+        <p style="color: coral; font-weight: bold; font-size: 20px;">What is HTML?</p>
+
+        <p> HTML, which stands for HyperText Markup Language, is the standard markup language used to create web pages. Developed by Tim Berners-Lee in 1991, HTML provides the basic structure and content of a webpage, defining elements such as headings, paragraphs, images, links, and more. HTML documents consist of a series of tags and elements enclosed in angle brackets, which instruct web browsers on how to display the content. With HTML, developers can create structured and semantically meaningful web pages that are accessible and user-friendly. Understanding HTML is essential for anyone interested in web development, as it forms the foundation for building websites and applications on the internet.</p>
+    <br>
+    <div style="text-align: center;">
+    <video width="400" height="240" controls>
+        <source src="What is HTML .mp4" type="video/mp4">
+      </video>
+    </div>
+      
+    <br>
+
+
+    <table border="1">
+    <caption>
+    <b>
+        <p style="color: coral; font-weight: bold; font-size: 20px;">HTML Tags and their Descriptions</p>
+    </b>
+</caption>
+<br>
+<img class="logo" height="150px" width="200px" src="1068_Bhumika/html tags.jpeg" alt="designn of tags">
+
+    <thead>
+        <tr>
+            <th style="color: darkgreen;">Tag</th>
+<th style="color: darkgreen;">Description</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>&lt;!DOCTYPE&gt;</code></td>
+            <td>Defines the document type.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;a&gt;</code></td>
+            <td>Defines a hyperlink.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;audio&gt;</code></td>
+            <td>Defines embedded sound content.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;b&gt;</code></td>
+            <td>Defines bold text.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;br&gt;</code></td>
+            <td>Defines a single line break.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;div&gt;</code></td>
+            <td>Defines a section in a document.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;img&gt;</code></td>
+            <td>Defines an image.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;ol&gt;</code></td>
+            <td>Defines an ordered list.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;p&gt;</code></td>
+            <td>Defines a paragraph.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;pre&gt;</code></td>
+            <td>Defines preformatted text.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;ul&gt;</code></td>
+            <td>Defines an unordered list.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;li&gt;</code></td>
+            <td>Defines a list item.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;table&gt;</code></td>
+            <td>Defines a table.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;tr&gt;</code></td>
+            <td>Defines a table row.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;th&gt;</code></td>
+            <td>Defines a table header cell.</td>
+        </tr>
+        <tr>
+            <td><code>&lt;td&gt;</code></td>
+            <td>Defines a table data cell.</td>
+        </tr>
+    </tbody>
+</table>
+ <audio controls src="tags audio.mp4"></audio> <br>
+ <br>
+
+<a href="https://www.w3schools.com/tags/">Click here for more information</a>
+
+<p style="color: coral; font-weight: bold; font-size: 20px;">HTML Features</p>
+
+<p style="color: green;" >Key Features of HTML:</p>
+<ul>
+    <li>HTML (HyperText Markup Language) provides the structure for web pages.</li>
+    <li>It consists of elements, which are the building blocks of web pages, and attributes, which provide additional information about elements.</li>
+    <li>HTML allows for the creation of structured documents by using tags to define various elements such as headings, paragraphs, lists, links, images, and more.</li>
+    <li>Attributes can be added to elements to modify their behavior or appearance.</li>
+</ul>
+
+<p style="color: coral; font-weight: bold; font-size: 20px;">Role of HTML in Web Development:</p>
+<p style="color: green;" >HTML plays a fundamental role in web development:</p>
+<ul>
+    <li>It serves as the backbone of web pages, providing the structure and content that web browsers interpret and display to users.</li>
+    <li>HTML facilitates the creation of accessible, structured, and semantic web content, which enhances user experience and search engine optimization (SEO).</li>
+    <li>By incorporating HTML with other technologies such as CSS (Cascading Style Sheets) and JavaScript, developers can create dynamic and interactive web pages.</li>
+    <li>HTML forms the basis for building responsive and mobile-friendly websites, ensuring compatibility across various devices and screen sizes.</li>
+</ul>
+
+<p style="color: coral; font-weight: bold; font-size: 20px;">Evolution of HTML Versions:</p>
+<p style="color: green;" >HTML has evolved over time with new versions introducing enhanced features and capabilities:</p>
+<ul>
+    <li><strong>HTML 1.0:</strong> The initial version introduced in 1991 by Tim Berners-Lee, offering basic markup for creating simple web pages.</li>
+    <li><strong>HTML 2.0:</strong> Released in 1995, it introduced new features such as forms and tables, expanding the capabilities of HTML.</li>
+    <li><strong>HTML 3.2:</strong> Introduced in 1997, it standardized many features previously implemented using browser-specific extensions.</li>
+    <li><strong>HTML 4.01:</strong> Released in 1999, it added support for scripting languages and multimedia elements.</li>
+    <li><strong>XHTML (HTML5):</strong> XHTML, based on XML syntax, was developed to extend HTML's capabilities with stricter rules for syntax and structure.</li>
+    <li><strong>HTML5:</strong> The latest version of HTML, introduced in 2014, offers new semantic elements, multimedia support, offline storage, and improved accessibility features.</li>
+</ul>
+
+    <p style="color: coral; font-weight: bold; font-size: 20px;">Uses of HTML</p>
+    <br>
+    <br>
+
+   <ul style="margin-bottom: 20px;">
+    <li>Structuring web pages by defining headings, paragraphs, lists, and other elements.</li>
+    <li>Creating hyperlinks to navigate between web pages and external resources.</li>
+    <li>Embedding multimedia content such as images, videos, and audio for enhanced user experience.</li>
+    <li>Building forms to collect user input, such as login forms, registration forms, and surveys.</li>
+    <li>Implementing accessibility features to ensure web content is usable by people with disabilities.</li>
+    <li>Facilitating search engine optimization (SEO) by organizing content with semantic markup.</li>
+    <li>Enabling the creation of responsive web designs that adapt to different screen sizes and devices.</li>
+    <li>Supporting the development of interactive web applications using JavaScript and CSS.</li>
+    <li>Integrating with server-side technologies such as PHP, Python, or Node.js to generate dynamic web content.</li>
+    <li>Enhancing user experience through the use of semantic elements and microdata for better understanding by search engines and assistive technologies.</li>
+    <li>Implementing web standards and best practices to ensure cross-browser compatibility and future-proofing.</li>
+    <li>Facilitating collaboration and version control through the use of HTML templates and frameworks.</li>
+    <li>Enabling the creation of offline web applications using technologies like Service Workers and Web Storage.</li>
+</ul>
+
+<p style="color: coral; font-weight: bold; font-size: 20px;">Benefits of HTML</p>
+<ul style="margin-bottom: 20px;">
+    <li><strong>Universal Compatibility:</strong> HTML is supported by all web browsers, making it universally accessible across different devices and platforms.</li>
+    <li><strong>Ease of Learning:</strong> HTML has a simple syntax and doesn't require extensive programming knowledge to understand, making it accessible to beginners.</li>
+    <li><strong>SEO-Friendly:</strong> HTML provides semantic markup, allowing search engines to understand the structure and content of web pages easily, which can improve search engine rankings.</li>
+    <li><strong>Platform Independence:</strong> HTML documents can be created and viewed on any operating system without compatibility issues.</li>
+    <li><strong>Lightweight:</strong> HTML files are lightweight and load quickly, enhancing the overall performance of web pages.</li>
+    <li><strong>Accessibility:</strong> HTML supports accessibility features such as alt attributes for images and semantic markup for screen readers, ensuring that web content is accessible to users with disabilities.</li>
+    <li><strong>Integration with Other Technologies:</strong> HTML seamlessly integrates with other web technologies such as CSS for styling and JavaScript for interactivity, allowing developers to create dynamic and visually appealing web pages.</li>
+    <li><strong>Responsive Design:</strong> HTML supports responsive design techniques, allowing web pages to adapt and display optimally on different devices and screen sizes.</li>
+    <li><strong>Open Standard:</strong> HTML is an open standard maintained by the World Wide Web Consortium (W3C), ensuring its transparency and interoperability.</li>
+    <li><strong>Real-Time Editing:</strong> HTML can be edited using simple text editors, making it easy to update and maintain web content in real-time.</li>
+</ul>
+
+<br>
+<br> 
+
+<p style="margin-bottom: 20px;">In Summary, HTML, or HyperText Markup Language, is the foundation of the web. It provides the structure and content for web pages, allowing developers to create interactive sites. As technology evolves, HTML adapts, ensuring it remains essential for building engaging online experiences. Looking to the future, HTML will continue to play a crucial role in shaping the digital landscape. With the rise of emerging technologies such as virtual reality, augmented reality, and the Internet of Things, HTML will be instrumental in creating seamless integration between devices and platforms. Additionally, HTML's accessibility and compatibility across different devices and browsers make it indispensable for ensuring inclusivity and accessibility in the digital age.</p>
+
+<br>
+<br>
+
+<p style="margin-bottom: 20px;">So, what are you waiting for? Learn HTML now with this video given below.</p>
+
+    <div> 
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HcOc7P5BMi4?si=lgEsRyJnQ40uGmO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <a href="https://youtu.be/BsDoLVMnmZs?si=INfnlIiltXkoa4aR/">  for click here for more </a>
+    </div>
+    <br>
+    <section>
+        <h3>Comments</h3>
+        <form action="/submit-comment" method="post">
+            <label for="comment">Share your thoughts with us:</label><br>
+            <textarea id="comment" name="comment" rows="4" cols="50" style="resize: vertical;"></textarea><br>
+            <div style="text-align: center;">
+                <input type="submit" value="Submit" style="background-color: grey; color: black; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+            </div>
+    </section>
+    <br>
+    <footer>
+        <p>&copy; 2024 HTML Project</p>
+    </footer>
+</body>
+</html>

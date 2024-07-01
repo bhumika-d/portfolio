@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin-top: 5px;
+}
+
+body {
+    height: 100vh;
+    background-image: url(back.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #26b9ea;
+}
+
+.header {
+    position: relative;
+    padding: 0 2rem;
+    margin-top: 10px;
+}
+
+.header img {
+    margin: 20px;
+}
+
+.navbar {
+    margin-top: 10px;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar  .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.action_btn {
+    background-color: #26b9ea;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.action_btn:hover {
+    scale: 1.05rem;
+    color: #fff;
+    background-color: #1097c4;
+
+}
+
+h1 {
+    color: #fff;
+    font-size: 30px;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.blog-posts {
+    flex-grow: 2;
+}
+
+.blog-posts article {
+    margin-bottom: 40px;
+}
+
+.blog-posts h2 {
+    color: yellow;
+}
+
+.blog-posts .meta {
+    color: greenyellow;
+}
+
+.blog-posts p {
+    margin-bottom: 10px;
+}
+
+.blog-posts a {
+    color: yellow;
+    text-decoration: none;
+}
+
+.blog-posts a:hover {
+    text-decoration: underline;
+}
+
+.sidebar {
+    flex-basis: 45%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    color: yellow;
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: rgb(2, 7, 77);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+h3 {
+    color: #26b9ea;
+}
+p {
+    color: white;
+}
+.sidebar section p {
+    color: #ff5733;
+}
+.sidebar img {
+    max-width: 100%;
+    height: auto;
+}

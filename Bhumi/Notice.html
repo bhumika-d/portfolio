@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notice Box</title>
+<style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin-top: 5px;
+}
+
+body {
+    height: 100vh;
+    background-image: url(back.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+.notice-box {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.notice-box h2{
+    text-align: center;
+}
+
+.notice {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.notice p {
+    margin: 0;
+}
+
+.notice.warning {
+    border-color: #f0ad4e;
+    background-color: #fcf8e3;
+}
+
+.notice.error {
+    border-color: #d9534f;
+    background-color: #f2dede;
+}
+
+.notice.success {
+    border-color: #5cb85c;
+    background-color: #dff0d8;
+}
+.notice.info {
+    border-color: #5bc0de;
+    background-color: #d9edf7;
+}
+</style>
+</head>
+<body>
+
+<div class="notice-box">
+    <h2>Notice-box</h2>
+    <div class="notice warning">
+
+        <p>This weeks BS class test is cancelled.</p>
+    </div>
+    <div class="notice error">
+        <p>This Tuesday, there is a CENG listening test. And speaking test for roll(1116-1060)</p>
+    </div>
+    <div class="notice success">
+        <p>This Tuesday is the deadline for submitting the DEPT lab report.</p>
+    </div>
+    <div class="notice info">
+        <p>On the 30th of May, our university is organizing a summer cultural program. There will be dances, songs, a fashion show, and many other activities. Please feel free to join any of these events. It promises to be a delightful celebration of our diverse talents and interests. We look forward to seeing you there!</p>
+    </div>
+</div>
+
+</body>
+</html>

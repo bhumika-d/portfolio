@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin-top: 5px;
+}
+
+body {
+    height: 100vh;
+    background-image: url(back.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+.container {
+  border: 1px solid black;
+  padding: 20px;
+  width: fit-content;
+  margin: 20px auto;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #ddd3d3;
+}
+
+.signature-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.signature-options .signature {
+  border-top: 1px solid black;
+  padding-top: 10px;
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+}
+
+
+.btn {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+  align-self: center;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: darkgreen;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h4><b>Name:</b> Bhumika Dey</h4> <h4><b>ID:</b> 0222310005101068</h4> <h4><b>Session:</b> Spring 2024 (B.Sc.)</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Course Code</th>
+        <th>Course Name</th>
+        <th>Credit</th>
+        <th>Exam Type</th>
+        <th>Total Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CSE 1115</td>
+        <td>OOP</td>
+        <td>3</td>
+        <td>Regular</td>
+        <td>6720</td>
+      </tr>
+      <tr>
+        <td>CSE 1116</td>
+        <td>OOPL</td>
+        <td>1.5</td>
+        <td>Regular</td>
+        <td>3360</td>
+      </tr>
+      <tr>
+        <td>CSE 3210</td>
+        <td>IP</td>
+        <td>1.5</td>
+        <td>Regular</td>
+        <td>3360</td>
+      </tr>
+      <tr>
+        <td>EEE 2201</td>
+        <td>DEPT</td>
+        <td>3</td>
+        <td>Regular</td>
+        <td>6720</td>
+      </tr>
+      <tr>
+        <td>EEE 2202</td>
+        <td>DEPTL</td>
+        <td>1.5</td>
+        <td>Regular</td>
+        <td>3360</td>
+      </tr>
+      <tr>
+        <td>ENG 1102</td>
+        <td>CENG</td>
+        <td>1.5</td>
+        <td>Regular</td>
+        <td>3360</td>
+      </tr>
+      <tr>
+        <td>MAT 1205</td>
+        <td>CGVA</td>
+        <td>3</td>
+        <td>Regular</td>
+        <td>6720</td>
+      </tr>
+      <tr>
+        <td>MAT 2305</td>
+        <td>NM</td>
+        <td>1.5</td>
+        <td>Regular</td>
+        <td>3360</td>
+      </tr>
+      <tr>
+        <td>SSC 1101</td>
+        <td>BS</td>
+        <td>2</td>
+        <td>Regular</td>
+        <td>4480</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td>9</td>
+        <td>18.50</td>
+        <td></td>
+        <td>41440</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="signature-options">
+    <div class="signature">
+      <p>Signature of student</p>
+      <!-- Add space for signature -->
+    </div>
+    <div class="signature">
+      <p>Payment Status</p>
+      <!-- Add space for signature -->
+    </div>
+    <div class="signature">
+      <p>Signature of Advisor</p>
+      <!-- Add space for signature -->
+    </div>
+  </div>
+
+  <div class="text-center" style="text-align: center;"> <!-- Added container for centering -->
+    <button id="downloadPDF" class="btn"><i class="fa fa-download"></i> Download</button>
+
+  </div>
+
+</div>
+
+<script>
+  document.getElementById("downloadPDF").addEventListener("click", function() {
+    const container = document.querySelector(".container");
+
+    html2canvas(container).then(canvas => {
+        console.log(canvas); // Log the canvas element to check if it's captured correctly
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF();
+        const imgWidth = 210;
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        
+        pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+        pdf.save("document.pdf");
+    });
+});
+
+    </script>
+    
+
+</body>
+</html>

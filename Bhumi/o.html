@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester Activities Overview</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 400px; /* Adjust the width as needed */
+            height: 250px; /* Adjust the height as needed */
+            border: 1px solid #ccc; /* Add border */
+            padding: 10px; /* Add padding */
+            margin: 0 auto; /* Center horizontally */
+            overflow: auto; /* Enable scroll if chart exceeds container */
+        }
+
+        .chart-content {
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space elements evenly */
+            align-items: center; /* Center vertically */
+            margin-bottom: 10px; /* Add some space between heading and chart */
+        }
+
+        h3 {
+            text-align: center; /* Center the heading */
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-content">
+            <h3>Semester Activities Overview</h3>
+            <canvas id="activityChart" width="250" height="250"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for activities completed
+        const activitiesCompleted = {
+            quizes: 20,
+            assignments: 10,
+            midTerm: 20,
+            attendance: 10,
+            final: 40
+            // Add more activities as needed
+        };
+
+        // Function to render the pie chart
+        function renderPieChart(data) {
+            const ctx = document.getElementById('activityChart').getContext('2d');
+            const labels = Object.keys(data);
+            const values = Object.values(data);
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Activities (Marks)',
+                        data: values,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)', // Red
+                            'rgba(54, 162, 235, 0.5)', // Blue
+                            'rgba(255, 206, 86, 0.5)', // Yellow
+                            'rgba(75, 192, 192, 0.5)', // Green
+                            'rgba(153, 102, 255, 0.5)', // Purple
+                            // Add more colors as needed
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutoutPercentage: 50 // Adjust the percentage to control the size of the blank space
+                }
+            });
+        }
+
+        // Call the function to render the pie chart
+        renderPieChart(activitiesCompleted);
+    </script>
+</body>
+</html>

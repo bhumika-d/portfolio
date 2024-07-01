@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrollment Website</title>
+<style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin-top: 5px;
+}
+
+body {
+    height: 100vh;
+    background-image: url(back.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #26b9ea;
+}
+
+.header {
+    position: relative;
+    padding: 0 2rem;
+    margin-top: 10px;
+}
+
+.header img {
+    margin: 20px;
+}
+
+.navbar {
+    margin-top: 10px;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar  .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.action_btn {
+    background-color: #26b9ea;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.action_btn:hover {
+    scale: 1.05rem;
+    color: #fff;
+    background-color: #1097c4;
+
+}
+
+h1 {
+    color: #fff;
+    font-size: 30px;
+}
+
+
+.container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="checkbox"], button {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #45a049;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a041;
+    }
+    footer {
+    background-color: rgb(2, 7, 77);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+    
+/* Style for horizontal layout */
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.courses-container div {
+    flex: 1;
+    min-width: 150px;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="puc_logo.png" alt="puc logo" width="100px" height="80px">
+            <h1>Premier University </h1> <br>
+            <ul class="links">
+                <li><a href="Homepage.html">HOME</a></li>
+                <li><a href="Editprofile.html">EDIT PROFILE</a></li>
+                <li><a href="EditRegistration.html">EDIT REGISTRATION</a></li>
+                <li><a href="blog.html">STUDENT BLOGS</a></li>
+                
+            </ul>
+            <a href="signout.html" class="action_btn">SIGN OUT</a>
+        </div>
+        
+<div class="container">
+    <h1>Enrollment Form</h1>
+
+    <form id="enrollment-form" action="/enroll" method="post">
+        <label for="session">Select Available Session:</label>
+        <select name="session" id="session">
+            <option value="">-- Select session --</option>
+            <option value="Spring 2024(B.Sc.)">Spring 2024(B.Sc.)</option>
+        </select>
+        <label for="session">Select Semester:</label>
+        <select name="semester" id="semester">
+            <option value="">-- Select semester --</option>
+            <option value="Semester_1">1st Semester</option>
+            <option value="Semester_1">2nd Semester</option>
+            <option value="Semester_1">3rd Semester</option>
+        </select>
+        <label>Select Courses:</label>
+        <!-- Container for courses with horizontal layout -->
+        <div class="courses-container">
+            <div>
+                <input type="checkbox" id="course1" name="courses[]" value="OOPL">
+                <label for="course1">OOPL</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course2" name="courses[]" value="OOP">
+                <label for="course2">OOP</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course3" name="courses[]" value="IP">
+                <label for="course3">IP</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course4" name="courses[]" value="NM">
+                <label for="course4">NM</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course5" name="courses[]" value="DEPT">
+                <label for="course5">DEPT</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course6" name="courses[]" value="DEPTL">
+                <label for="course6">DEPTL</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course7" name="courses[]" value="BS">
+                <label for="course7">BS</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course8" name="courses[]" value="CENG">
+                <label for="course8">CENG</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course9" name="courses[]" value="CGVA">
+                <label for="course9">CGVA</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course10" name="courses[]" value="DEPT">
+                <label for="course9">DEPT</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course11" name="courses[]" value="DS">
+                <label for="course9">DS</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course12" name="courses[]" value="DSL">
+                <label for="course9">DSL</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course13" name="courses[]" value="EEE">
+                <label for="course9">EEE</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course14" name="courses[]" value="PF">
+                <label for="course9">PF</label>
+            </div>
+            <div>
+                <input type="checkbox" id="course15" name="courses[]" value="PFL">
+                <label for="course9">PFL</label>
+            </div>
+        </div>
+        <button type="button" id="submit-btn">Enroll Now</button>
+    </form>
+</div>
+<footer>
+    <p>&copy; 2024 Premier University. All rights reserved.</p>
+</footer>
+<script>
+    document.getElementById('submit-btn').addEventListener('click', function() {
+        var selectedCourses = document.querySelectorAll('input[name="courses[]"]:checked');
+        if (selectedCourses.length === 0) {
+            alert('Please select at least one course to enroll.');
+        } else {
+            var coursesList = Array.from(selectedCourses).map(course => course.value);
+            var confirmationMessage = "You have enrolled in the following courses for this semester:\n\n" + coursesList.join("\n");
+            alert(confirmationMessage);
+        }
+    });
+</script>
+</body>
+</html>
+
